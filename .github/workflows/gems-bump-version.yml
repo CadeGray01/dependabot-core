@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Generate token
         id: generate_token
-        uses: actions/create-github-app-token@3ff1caaa28b64c9cc276ce0a02e2ff584f3900c5 # v2.0.2
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
         with:
           app-id: ${{ secrets.DEPENDABOT_CORE_ACTION_AUTOMATION_APP_ID }}
           private-key: ${{ secrets.DEPENDABOT_CORE_ACTION_AUTOMATION_PRIVATE_KEY }}
@@ -31,7 +31,7 @@ jobs:
           ref: "main"
 
       # bump-version.rb needs bundler
-      - uses: ruby/setup-ruby@dffc446db9ba5a0c4446edb5bca1c5c473a806c5 # v1.235.0
+      - uses: ruby/setup-ruby@eaecf785f6a34567a6d97f686bbb7bccc1ac1e5c # v1.237.0
         with:
           # Use the version of bundler specified in `updater/Gemfile.lock`.
           # Otherwise the generated PR will change `BUNDLED WITH` in
